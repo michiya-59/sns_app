@@ -1,0 +1,9 @@
+<h1 class="posts_h1">投稿一覧</h1>
+
+<div class="posts_main">
+  <% @posts.each do |post| %>
+    <div class="posts_part">
+      <%= link_to post.content,post_path(post),class: 'content_show_a' %>
+    </div>
+  <% end %>
+</div>
