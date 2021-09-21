@@ -11,20 +11,7 @@
   </head>
 
   <body>
-  <header>
-    <div class="header_main">
-      <div class="header_left">
-        <h1><%= link_to 'SNS',root_path %></h1>
-      </div>
-
-      <div class="header_right">
-        <%= link_to 'HOME',root_path,class:'header_a' %>
-        <%= link_to '新規投稿',new_post_path,class:'header_a' %>
-        <%= link_to 'ログイン',login_path,class:'header_a' %>
-        <%= link_to 'ログアウト',logout_path,class:'header_a' %>
-      </div>
-    </div>
-  </header>
+    <%= render 'share/header' %>
     <div class="container">
       <%= yield %>
       <%= debug(params) if Rails.env.development? %>

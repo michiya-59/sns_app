@@ -1,0 +1,18 @@
+<header>
+    <div class="header_main">
+      <div class="header_left">
+        <h1><%= link_to 'SNS',root_path %></h1>
+      </div>
+
+      <div class="header_right">
+      <% if login_in? %>
+        <%= link_to 'HOME',root_path,class:'header_a' %>
+        <%= link_to 'プロフィール',user_path(current_user),class:'header_a' %>
+        <%= link_to '新規投稿',new_post_path,class:'header_a' %>
+        <%= link_to 'ログアウト',logout_path,method: :delete,class:'header_a' %>
+      <% else %>
+        <%= link_to 'ログイン',login_path,class:'header_a' %>
+      <% end %>
+      </div>
+    </div>
+  </header>

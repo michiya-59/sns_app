@@ -8,6 +8,7 @@
   <div class="form">
     <%= f.label :password ,'パスワード',class: 'login_form_part' %>
     <%= f.password_field :password,class: 'login_form_password' %>
+    <p><%= f.check_box :remember,class: 'remember_check' %>ログイン情報を記憶する</p>
   </div>
   <p>会員登録は<%= link_to 'こちら',new_user_path,class: 'entry_link' %></p>
   <%= f.submit 'ログイン',class: 'login_submit' %>
