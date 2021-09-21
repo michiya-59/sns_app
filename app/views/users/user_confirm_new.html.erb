@@ -17,7 +17,13 @@
     <%= f.label :password ,'パスワード',class: 'confirm_part' %>
     <%= @user.password %>
   </p>
+  <!---
+  <p>
+    <%= f.label :image_name ,'写真',class: 'confirm_part' %>
+    <%= @user.image_name %>
+  </p>
   <%= f.hidden_field :password %>
+  --->
 
   <%= f.hidden_field :password_confirmation %>
   <%= f.submit '戻る' ,name: 'back',class: 'confirm_submit login_submit'%>
