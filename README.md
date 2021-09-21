@@ -1,4 +1,14 @@
-# README
+## Getting Started
+
+``` sh
+bin/setup
+bundle exec rails db:seed
+make s
+=> http://lvh.me:3000
+```
+
+
+## README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
