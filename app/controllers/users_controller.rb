@@ -9,12 +9,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if params[:user][:image_name]
-      @user.image_name = "#{@user.id}.jpg"
-      image = params[:user][:image_name]
-      File.binwrite("public/user_images/#{@user.image_name}",image.read)
-    end
-
     if @user.save
       login(@user)
       redirect_to root_url
@@ -46,6 +40,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name,:email,:password,:password_confirmation,:image_name)
+    params.require(:user).permit(:name,:email,:password,:password_confirmation)
   end
 end

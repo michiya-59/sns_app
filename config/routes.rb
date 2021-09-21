@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :users do
-    # post :user_confirm, action: :user_confirm_new, on: :new
+    post :user_confirm, action: :user_confirm_new, on: :new
     
     member do
       get 'setting'
