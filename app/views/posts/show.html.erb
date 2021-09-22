@@ -1,8 +1,19 @@
-<div class="posts_detail_main">
-  <p class="posts_detail_part_text"><%= @post.content %></p>
-  <p class="posts_detail_part_time"><%= @post.created_at.to_s(:datetime_jp) %></p>
-</div>
+<div class="home_main">
+  <div class="posts_main">
+      <div class="posts_part">
+        <div class="posts_part_left">
+        </div>
+        <div class="posts_part_right">
+          <p><%= link_to @user.name,user_path(@user) %></p>
+          <p style="font-weight:100;"><%=link_to @post.content,post_path(@post),class: 'content_show_a' %></p>
+          <p class="posts_detail_part_time"><%= @post.created_at.to_s(:datetime_jp) %></p>
+        </div>
+      </div>
+  </div>
+<div>
 <div class="posts_btn">
-  <%= link_to '編集',edit_post_path(@post),class: 'edit_button' %>
-  <%= link_to '削除',@post ,method: :delete,class: 'delete_button',date: {confirm: "投稿を削除していいですか？"} %>
+  <% if @post.id == current_user %>
+    <%= link_to '編集',edit_post_path(@post),class: 'edit_button' %>
+    <%= link_to '削除',@post ,method: :delete,class: 'delete_button',date: {confirm: "投稿を削除していいですか？"} %>
+  <% end %>
 </div>

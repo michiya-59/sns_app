@@ -117,25 +117,14 @@
           font-weight: bold;
           font-size: 15px;
         }
+        .posts_detail_part_time{
+          font-size: 10px;
+          margin: 10px 0 0 0;
+          color: #9b9b9b;
+          font-weight: 100;
+        }
       }
     }
-  }
-}
-
-.posts_detail_main{
-  box-shadow: 1px 1px 5px #efefef;
-  border: 1px solid #e2e2e2;
-  width: 35%;
-  margin: 50px auto;
-  padding: 20px;
-  text-align: left;
-  .posts_detail_part_text{
-    font-size: 17px;
-  }
-  .posts_detail_part_time{
-    font-size: 10px;
-    margin: 0;
-    color: #9b9b9b;
   }
 }
 
