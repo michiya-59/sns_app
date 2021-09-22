@@ -92,14 +92,28 @@
   width: 40%;
   margin: 50px auto;
   .posts_part{
+    display: flex;
     padding: 25px 25px;
     border-bottom: 1px solid #f1f1f1;
     box-shadow: 1px 1px 1px #efefef;
-    .content_show_a{
+    .content_show_a, a{
       margin: 0;
       color:black;
       &:hover{
         text-decoration: none;
+      }
+    }
+    .posts_part_left{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: cadetblue;
+      margin: 0 30px;
+    }
+    .posts_part_right{
+      p{
+        font-weight: bold;
+        font-size: 15px;
       }
     }
   }
