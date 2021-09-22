@@ -220,8 +220,8 @@
     .user_show_main_left_top{
       display: flex;
       .posts_part_left{
-        width: 75px;
-        height: 75px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         background: cadetblue;
         margin: 0 30px;
@@ -231,6 +231,35 @@
         font-size: 25px;
         margin: 0;
         line-height: 75px;
+      }
+    }
+    .edit_or_follow{
+      margin: 35px 0 0 0;
+      .setting_link{
+        color: black;
+        border: 1px solid #979494;
+        padding: 7px 29px;
+        border-radius: 20px;
+        &:hover{
+          background-color: #efefef;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .follow_info_main{
+      margin: 30px 0 0 87px;
+      display: flex;
+      .following_info,.follower_info{
+        width: 35%;
+        a{
+          color: black;
+          display: flex;
+          .number{
+            font-weight: bold;
+            margin-right: 4px;
+          }
+        }
       }
     }
   }
@@ -271,3 +300,4 @@
     }
   }
 }
+
