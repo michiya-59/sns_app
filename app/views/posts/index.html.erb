@@ -1,16 +1,17 @@
 <h1 class="posts_h1">投稿一覧</h1>
 
-<div class="posts_main">
-  <% @posts.each do |post| %>
-    <% @user = User.find_by(id: post.user_id) %>
-    <div class="posts_part">
-      <div class="posts_part_left">
-        <p class="demmo_image"></p>
+<div class="home_main">
+  <div class="posts_main">
+    <% @posts.each do |post| %>
+      <% @user = User.find_by(id: post.user_id) %>
+      <div class="posts_part">
+        <div class="posts_part_left">
+        </div>
+        <div class="posts_part_right">
+          <p><%= link_to @user.name,user_path(@user) %></p>
+          <%= link_to post.content,post_path(post),class: 'content_show_a' %>
+        </div>
       </div>
-      <div class="posts_part_right">
-        <p><%= link_to @user.name,user_path(@user) %></p>
-        <%= link_to post.content,post_path(post),class: 'content_show_a' %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
+<div>

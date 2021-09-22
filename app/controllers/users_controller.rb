@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @posts = current_user.posts.where(user_id: @user.id)
+  end
+
   def edit
   end
 
