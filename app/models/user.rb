@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :profile_image, ProfileImageUploader
+
   attr_accessor :remember_token
   has_many :posts,dependent: :destroy
   validates :name,presence: true,length: {maximum: 20}

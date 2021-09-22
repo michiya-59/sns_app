@@ -12,19 +12,20 @@
     <%= @user.email %>
   </p>
   <%= f.hidden_field :email %>
-  
+
   <p>
     <%= f.label :password ,'パスワード',class: 'confirm_part' %>
     <%= @user.password %>
   </p>
   <%= f.hidden_field :password %>
-  <!---
-  <p>
-    <%= f.label :image_name ,'写真',class: 'confirm_part' %>
-    <%= @user.image_name %>
-  </p>
-  --->
   <%= f.hidden_field :password_confirmation %>
+
+  <p>
+    <%= f.label :profile_image ,'写真',class: 'confirm_part' %>
+    <%= image_tag @user.profile_image_url %>
+  </p>
+  <%= f.hidden_field :profile_image, value: @user.profile_image.current_path %>
+
   <%= f.submit '戻る' ,name: 'back',class: 'confirm_submit login_submit'%>
   <%= f.submit '登録' ,class: 'confirm_submit login_submit'%>
 <% end %>
