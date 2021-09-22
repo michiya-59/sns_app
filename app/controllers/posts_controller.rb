@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post,only: [:edit,:update,:show,:destroy]
   def index
     if current_user.blank?
-      @posts = posts.all
+      @posts = Post.all
     else
       @posts = current_user.posts.all
     end
