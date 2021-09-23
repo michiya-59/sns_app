@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :posts
   resources :users do
     post :user_confirm, action: :user_confirm_new, on: :new
-    
     member do
       get 'setting'
+      get :following, :followers
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

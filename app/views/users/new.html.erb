@@ -1,28 +1,28 @@
 <h1 class="posts_h1">会員登録</h1>
 
-<%= form_with(model: @user,local: true,class: 'entry_form',url: user_confirm_new_user_path, multipart: true) do |f| %>
+<%= form_with(model: @user, local: true, class: 'entry_form', url: user_confirm_new_user_path, multipart: true) do |f| %>
   <%= render 'share/error_messages', object: f.object %>
 
   <div class="form">
-    <%= f.label :name ,'名前',class: 'entry_form_part' %>
-    <%= f.text_field :name,class: 'entry_form_email' %>
+    <%= f.label :name ,'名前', class: 'entry_form_part' %>
+    <%= f.text_field :name, class: 'entry_form_email' %>
   </div>
   <div class="form">
-    <%= f.label :email ,'メールアドレス',class: 'entry_form_part' %>
-    <%= f.text_field :email,class: 'entry_form_email' %>
+    <%= f.label :email , 'メールアドレス', class: 'entry_form_part' %>
+    <%= f.text_field :email, class: 'entry_form_email' %>
   </div>
   <div class="form">
-    <%= f.label :password ,'パスワード',class: 'entry_form_part' %>
-    <%= f.password_field :password,class: 'entry_form_password' %>
+    <%= f.label :password , 'パスワード', class: 'entry_form_part' %>
+    <%= f.password_field :password, class: 'entry_form_password' %>
   </div>
   <div class="form">
-    <%= f.label :password_confirmation ,'パスワード(確認)',class: 'entry_form_part' %>
-    <%= f.password_field :password_confirmation,class: 'entry_form_password' %>
+    <%= f.label :password_confirmation , 'パスワード(確認)', class: 'entry_form_part' %>
+    <%= f.password_field :password_confirmation, class: 'entry_form_password' %>
   </div>
 
   <div class="form">
-    <%= f.label :profile_image ,'写真',class: 'entry_form_part' %>
-    <%= f.file_field :profile_image,class: 'entry_form_password' %>
+    <%= f.label :profile_image , '写真',class: 'entry_form_part' %>
+    <%= f.file_field :profile_image, class: 'entry_form_password' %>
   </div>
 
   <%= f.submit '確認',class: 'login_submit' %>
