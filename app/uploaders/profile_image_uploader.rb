@@ -1,0 +1,2 @@
+class ProfileImageUploader < BaseUploader
+end

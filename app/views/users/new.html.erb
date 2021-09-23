@@ -20,9 +20,10 @@
     <%= f.password_field :password_confirmation, class: 'entry_form_password' %>
   </div>
 
-  <!--- <div class="form">
-    <%= f.label :image_name , '写真', class: 'entry_form_part' %>
-    <%= f.file_field :image_name, class: 'entry_form_password' %>
-  </div>--->
+  <div class="form">
+    <%= f.label :profile_image , '写真',class: 'entry_form_part' %>
+    <%= f.file_field :profile_image, class: 'entry_form_password' %>
+  </div>
+
   <%= f.submit '確認',class: 'login_submit' %>
 <% end %>

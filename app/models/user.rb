@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :profile_image, ProfileImageUploader
+
   attr_accessor :remember_token
   has_many :posts, dependent: :destroy
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy

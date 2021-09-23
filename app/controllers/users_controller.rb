@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    # XXX: 確認画面を挟んでるのでシリアライズできず、tmpに入ったものを開き直してる、あんまり良くない
+    @user = User.new(user_params.merge(profile_image: File.open(user_params[:profile_image])))
 
     if @user.save
       login(@user)
@@ -44,7 +45,8 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile_image)
   end
 end

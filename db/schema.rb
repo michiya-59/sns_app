@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_22_050832) do
+
+ActiveRecord::Schema.define(version: 2021_09_22_220017) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
     t.string "content", null: false
@@ -36,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_09_22_050832) do
     t.string "remember_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image_name"
+    t.string "profile_image"
   end
 
 end
