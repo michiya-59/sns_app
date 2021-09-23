@@ -1,30 +1,30 @@
 <h1 class="posts_h1">確認画面</h1>
 
-<%= form_with(model: @user,local: true,class: 'entry_form confirm_user_form') do |f| %>
+<%= form_with(model: @user, local: true, class: 'entry_form confirm_user_form') do |f| %>
   <p>
-    <%= f.label  :name,'名前',class: 'confirm_part' %>
+    <%= f.label  :name, '名前', class: 'confirm_part' %>
     <%= @user.name %>
   </p>
   <%= f.hidden_field :name %>
 
   <p>
-    <%= f.label :email ,'メールアドレス',class: 'confirm_part' %>
+    <%= f.label :email , 'メールアドレス', class: 'confirm_part' %>
     <%= @user.email %>
   </p>
   <%= f.hidden_field :email %>
   
   <p>
-    <%= f.label :password ,'パスワード',class: 'confirm_part' %>
+    <%= f.label :password , 'パスワード', class: 'confirm_part' %>
     <%= @user.password %>
   </p>
   <%= f.hidden_field :password %>
   <!---
   <p>
-    <%= f.label :image_name ,'写真',class: 'confirm_part' %>
+    <%= f.label :image_name , '写真', class: 'confirm_part' %>
     <%= @user.image_name %>
   </p>
   --->
   <%= f.hidden_field :password_confirmation %>
-  <%= f.submit '戻る' ,name: 'back',class: 'confirm_submit login_submit'%>
-  <%= f.submit '登録' ,class: 'confirm_submit login_submit'%>
+  <%= f.submit '戻る' , name: 'back', class: 'confirm_submit login_submit'%>
+  <%= f.submit '登録' , class: 'confirm_submit login_submit'%>
 <% end %>

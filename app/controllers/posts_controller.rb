@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post,only: [:edit,:update,:show,:destroy]
+  before_action :set_post, only: [:edit, :update, :show, :destroy]
   def index
     if current_user.blank?
       @posts = Post.all
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(posts_params)
 
     if @post.save
-      redirect_to posts_url,notice: '投稿しました。'
+      redirect_to posts_url, notice: '投稿しました。'
     else
       render 'new'
     end
