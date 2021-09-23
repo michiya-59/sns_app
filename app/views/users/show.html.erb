@@ -8,23 +8,27 @@
     </div>
     <% unless current_user.blank? %> <!--- ログインしているかどうか --->
       <% if @user.id = current_user.id %> <!--- プロフィール画面が自分のアカウントか --->
-        <p class="edit_or_follow"><%= link_to 'プロフィール編集',setting_user_path(@user),class: 'setting_link' %></p>
+        <p class="edit_or_follow">
+          <%= link_to 'プロフィール編集',setting_user_path(@user),class: 'setting_link' %>
+        </p>
       <% else %>
-        <p class="edit_or_follow"><%= link_to 'フォロー',setting_user_path(@user),class: 'setting_link' %></p>
+        <p class="edit_or_follow">
+          <%= link_to 'フォロー',setting_user_path(@user),class: 'setting_link' %>
+        </p>
       <% end %>
     <% end %>
     <div class="follow_info_main">
       <div class="following_info">
-      <a href="<%= following_user_path(@user) %>">
+       <%= link_to following_user_path(@user) do %>
         <p class="number"><%= @user.following.count %></p>
         <p>フォロー</p>
-      </a>
+      <% end %>
       </div>
       <div class="follower_info">
-        <a href="<%= followers_user_path(@user) %>">
+        <%= link_to followers_user_path(@user) do %>
           <p class="number"><%= @user.followers.count %></p>
           <p>フォロー</p>
-        </a>
+        <% end %>
       </div>
     </div>
 

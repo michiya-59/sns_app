@@ -38,15 +38,15 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-  def follow(other_user)
-    following << other_user
+  def follow(user)
+    following << user
   end
 
-  def unfollow(other_user)
-    active_relationships.find_by(followed_id: other_user.id).destroy
+  def unfollow(user)
+    active_relationships.find_by(followed_id: user.id).destroy
   end
 
-  def following?(other_user)
-    following.include?(other_user)
+  def following?(user)
+    following.include?(user)
   end
 end
