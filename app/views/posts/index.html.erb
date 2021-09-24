@@ -6,6 +6,7 @@
       <% @user = User.find_by(id: post.user_id) %>
       <div class="posts_part">
         <div class="posts_part_left">
+          <%= image_tag @user.profile_image_url,class: 'user_image' %>
         </div>
         <div class="posts_part_right">
           <p><%= link_to @user.name,user_path(@user) %></p>

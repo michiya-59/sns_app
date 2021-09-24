@@ -3,7 +3,7 @@
   <div class="user_show_main_left">
     <div class="user_show_main_left_top">
       <div class="posts_part_left">
-        <%= image_tag @user.profile_image_url %>
+        <%= image_tag @user.profile_image_url,class: 'user_image' %>
       </div>
       <p><%= @user.name %></p>
     </div>
@@ -40,6 +40,7 @@
       <% @posts.each do |post| %>
         <div class="posts_part">
           <div class="posts_part_left">
+            <%= image_tag @user.profile_image_url,class: 'user_image' %>
           </div>
           <div class="posts_part_right">
             <p><%= @user.name %></p>
