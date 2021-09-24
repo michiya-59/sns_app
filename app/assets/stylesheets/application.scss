@@ -206,6 +206,10 @@
     .confirm_part{
       width: 33%;
     }
+    .confirm_image{
+      height: 100px;
+      margin-bottom: 20px;
+    }
   }
   .confirm_submit{
     font-size: 10px;
@@ -216,7 +220,7 @@
   display: flex;
   margin-top: 66px;
   .user_show_main_left{
-    width: 30%;
+    width: 36%;
     border-right: 1px solid #d0d0d0;
     .user_show_main_left_top{
       display: flex;
@@ -240,7 +244,7 @@
       .setting_link{
         color: black;
         border: 1px solid #979494;
-        padding: 7px 29px;
+        padding: 7px 55px;
         border-radius: 20px;
         &:hover{
           background-color: #efefef;
@@ -267,6 +271,16 @@
   }
   .user_show_main_right{
     width: 70%;
+    .follower_or_following_msg{
+      font-size: 28px;
+      font-weight: bold;
+      width: 20%;
+      margin: 0 auto;
+      border-bottom: 4px solid #2dbbff;
+    }
+    .zero_msg{
+      margin: 50px 0;
+    }
     .posts_main{
       box-shadow: 1px 1px 5px #efefef;
       border: 1px solid #e2e2e2;

@@ -40,6 +40,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def following
+    @title = 'フォロー中'
+    @zero_msg = '誰もフォローしていません'
+    @user = User.find(params[:id])
+    @users = @user.following
+    render 'show_follow'
+  end
+
+  def followers
+    @title = 'フォロワー'
+    @zero_msg = '誰にもフォローされていません'
+    @user = User.find(params[:id])
+    @users = @user.followers
+    render 'show_follow'
+  end
+
   def setting
     @user = User.find(params[:id])
   end
