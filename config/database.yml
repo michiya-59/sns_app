@@ -13,7 +13,7 @@ development:
   database: sns_development
   host: localhost
   username: postgres
-  password:
+  password: michiya0509
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -23,7 +23,7 @@ test:
   database: sns_test
   host: localhost
   username: postgres
-  password:
+  password: michiya0509
 
 production:
   <<: *default
