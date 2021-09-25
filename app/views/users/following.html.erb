@@ -1,0 +1,11 @@
+<div class="user_show_main">
+  <%= render 'sns_profile_part' %>
+  <div class="user_show_main_right">
+    <p class="follower_or_following_msg">フォロー中<p>
+    <% if @users.present? %>
+      <%= render @users %>
+    <% else %>
+      <p class="zero_msg">誰もフォローしていません</p>
+    <% end %>
+  </div>
+</div>

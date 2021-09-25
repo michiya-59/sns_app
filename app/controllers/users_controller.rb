@@ -41,19 +41,15 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = 'フォロー中'
-    @zero_msg = '誰もフォローしていません'
     @user = User.find(params[:id])
     @users = @user.following
-    render 'show_follow'
+    render 'following'
   end
 
   def followers
-    @title = 'フォロワー'
-    @zero_msg = '誰にもフォローされていません'
     @user = User.find(params[:id])
     @users = @user.followers
-    render 'show_follow'
+    render 'followers'
   end
 
   def setting
