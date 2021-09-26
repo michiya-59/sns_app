@@ -29,6 +29,7 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find_by(id: @post.user_id)
+    @likes = Like.where(post_id: @post.id)
   end
 
   def destroy

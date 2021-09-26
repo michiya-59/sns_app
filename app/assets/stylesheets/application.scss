@@ -115,20 +115,38 @@
       }
       .posts_part_right{
         text-align: left;
-        p{
+        .user_name{
           font-weight: bold;
           font-size: 15px;
         }
-        .posts_detail_part_time{
-          font-size: 10px;
-          margin: 10px 0 0 0;
-          color: #9b9b9b;
-          font-weight: 100;
+        .likes_part{
+          display: flex;
+          width: 175px;
+          .posts_detail_part_time{
+            font-size: 10px;
+            margin: 10px 0 0 0;
+            color: #9b9b9b;
+            font-weight: 100;
+          }
+          .like_btn{
+            line-height: 33px;
+            width: 50px;
+            text-align: right;
+            .fa-heart{
+              margin-right: 5px;
+            }
+          }
+          .like_count{
+            margin: 0;
+            line-height: 32px;
+            font-weight: lighter;
+          }
         }
       }
     }
   }
 }
+
 
 .login_form,.entry_form{
   padding: 42px 0;
@@ -318,4 +336,6 @@
     }
   }
 }
+
+
 
