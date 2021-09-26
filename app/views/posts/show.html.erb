@@ -8,6 +8,11 @@
           <p><%= link_to @user.name, user_path(@user) %></p>
           <p style="font-weight:100;"><%=link_to @post.content, post_path(@post), class: 'content_show_a' %></p>
           <p class="posts_detail_part_time"><%= @post.created_at.to_s(:datetime_jp) %></p>
+          <% if @post.liked_by?(current_user) %>
+            <%= link_to 'いいねずみ', post_likes_path(@post), method: :delete %>
+          <% else %>
+            <%= link_to 'いいね', post_likes_path(@post), method: :post %>
+          <% end %>
         </div>
       </div>
   </div>
