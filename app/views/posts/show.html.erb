@@ -7,20 +7,7 @@
         <div class="posts_part_right">
           <p class="user_name"><%= link_to @user.name, user_path(@user) %></p>
           <p style="font-weight:100;"><%=link_to @post.content, post_path(@post), class: 'content_show_a' %></p>
-          <div class="likes_part">
-            <p class="posts_detail_part_time"><%= @post.created_at.to_s(:datetime_jp) %></p>
-            <% if @post.liked_by?(current_user) %>
-              <%= link_to post_likes_path(@post), class: 'like_btn', method: :delete do %>
-                <i class="fas fa-heart heart" style="color: #ee0021;"></i>
-              <% end %>
-                <p class="like_count"><%= @likes.count %></p>
-            <% else %>
-              <%= link_to post_likes_path(@post), class: 'like_btn', method: :post do %>
-                <i class="fas fa-heart" style="color: #a3a3a3;"></i>
-              <% end %>
-                <p class="like_count"><%= @likes.count %></p>
-            <% end %>
-          </div>
+          <%= render 'share/like_button', {post: @post} %>
         </div>
       </div>
   </div>
