@@ -87,6 +87,7 @@
   }
 }
 
+// 投稿の詳細画面のスタイル
 .home_main{
   .posts_main{
     box-shadow: 1px 1px 5px #efefef;
@@ -235,6 +236,7 @@
   }
 }
 
+// ユーザのプロフィール画面のスタイル
 .user_show_main{
   display: flex;
   margin-top: 66px;
@@ -327,10 +329,34 @@
         }
         .posts_part_right{
           text-align: left;
-          p{
+          .user_name{
             font-weight: bold;
             font-size: 15px;
           }
+          .likes_part{
+            display: flex;
+            width: 175px;
+            .posts_detail_part_time{
+              font-size: 10px;
+              margin: 10px 0 0 0;
+              color: #9b9b9b;
+              font-weight: 100;
+            }
+            .like_btn{
+              line-height: 33px;
+              width: 50px;
+              text-align: right;
+              .fa-heart{
+                margin-right: 5px;
+              }
+            }
+            .like_count{
+              margin: 0;
+              line-height: 32px;
+              font-weight: lighter;
+            }
+          }
+          
         }
       }
     }
