@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2021_09_25_131348) do
   enable_extension "plpgsql"
 
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
+    t.bigint "user_id"
+    t.bigint "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
@@ -51,4 +51,6 @@ ActiveRecord::Schema.define(version: 2021_09_25_131348) do
     t.string "profile_image"
   end
 
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
 end
