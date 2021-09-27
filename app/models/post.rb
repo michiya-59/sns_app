@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     return User.find_by(id: self.user_id)
   end
 
-  def liked_by?(current_user)
-    likes.where(user_id: current_user.id).exists?
+  def liked_by?(target_user)
+    likes.where(user_id: target_user.id).exists?
   end
 end
