@@ -11,7 +11,7 @@
           <div class="posts_part_right">
             <p class="user_name"><%= @user.name %></p>
             <%= link_to post.content, post_path(post), class: 'content_show_a' %>
-            <%= render 'shared/like_button', {post: post}%>
+            <%= render 'shared/like_button', { post: post }%>
           </div>
         </div>
       <% end %>
