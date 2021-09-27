@@ -8,9 +8,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
-    like = current_user.likes.find_by(post_id: @post.id)
-    like.destroy
+    current_user.likes.find_by!(post_id: params[:post_id]).destroy
     redirect_to @post
   end
 end
