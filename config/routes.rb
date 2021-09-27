@@ -4,14 +4,14 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   
   post 'likes/:id/create', to: 'likes#create'
-  delete 'likes/:id/create', to: 'likes#create'
+  delete 'likes/:id/destroy', to: 'likes#destroy'
 
   root 'posts#index'
 
   resources :posts do
     resource :likes, only: [:create, :destroy]
   end
-  
+
   resources :users do
     post :user_confirm, action: :user_confirm_new, on: :new
     member do
