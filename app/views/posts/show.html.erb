@@ -7,7 +7,11 @@
         <div class="posts_part_right">
           <p class="user_name"><%= link_to @user.name, user_path(@user) %></p>
           <p style="font-weight:100;"><%=link_to @post.content, post_path(@post), class: 'content_show_a' %></p>
+<<<<<<< HEAD
           <%= render 'shared/like_button', {post: @post} %>
+=======
+          <%= render 'share/like_button', { post: @post } %>
+>>>>>>> 3d4b03d7c3a632c91076bd6b18bacc37d98b4343
         </div>
       </div>
   </div>
@@ -16,7 +20,7 @@
   <% if current_user.present? %>
     <% if @post.user_id == current_user.id %>
       <%= link_to '編集', edit_post_path(@post), class: 'edit_button' %>
-      <%= link_to '削除', @post , method: :delete, class: 'delete_button', date: {confirm: "投稿を削除していいですか？"} %>
+      <%= link_to '削除', @post, method: :delete, class: 'delete_button', date: { confirm: "投稿を削除していいですか？" } %>
     <% end %>
   <% end %>
 </div>

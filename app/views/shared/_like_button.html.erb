@@ -4,11 +4,11 @@
     <%= link_to post_likes_path(post), class: 'like_btn', method: :delete do %>
       <i class="fas fa-heart heart" style="color: #ee0021;"></i>
     <% end %>
-      <p class="like_count"><%= post.likes.count %></p>
+    <p class="like_count"><%= post.likes.count %></p>
   <% else %>
     <%= link_to post_likes_path(post), class: 'like_btn', method: :post do %>
       <i class="fas fa-heart" style="color: #a3a3a3;"></i>
     <% end %>
-      <p class="like_count"><%= post.likes.count %></p>
+    <p class="like_count"><%= post.likes.count %></p>
   <% end %>
 </div>
