@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  resources :posts
+  resources :posts do
+    resources :likes, only: [:create, :destroy]
+  end
+
   resources :users do
     post :user_confirm, action: :user_confirm_new, on: :new
     member do

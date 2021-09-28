@@ -21,8 +21,8 @@
   <%= f.hidden_field :password_confirmation %>
 
   <p>
-    <%= f.label :profile_image , '写真',class: 'confirm_part' %>
-    <%= image_tag @user.profile_image_url %>
+    <%= f.label :profile_image , '写真', class: 'confirm_part' %>
+    <%= image_tag @user.profile_image_url, class: 'confirm_image' %>
   </p>
   <%= f.hidden_field :profile_image, value: @user.profile_image.current_path %>
 

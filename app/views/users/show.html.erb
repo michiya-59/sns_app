@@ -1,49 +1,17 @@
 <div class="user_show_main">
-
-  <div class="user_show_main_left">
-    <div class="user_show_main_left_top">
-      <div class="posts_part_left">
-        <%= image_tag @user.profile_image_url %>
-      </div>
-      <p><%= @user.name %></p>
-    </div>
-    <% unless current_user.blank? %> <!--- ログインしているかどうか --->
-      <% if @user.id = current_user.id %> <!--- プロフィール画面が自分のアカウントか --->
-        <p class="edit_or_follow">
-          <%= link_to 'プロフィール編集',setting_user_path(@user),class: 'setting_link' %>
-        </p>
-      <% else %>
-        <p class="edit_or_follow">
-          <%= link_to 'フォロー',setting_user_path(@user),class: 'setting_link' %>
-        </p>
-      <% end %>
-    <% end %>
-    <div class="follow_info_main">
-      <div class="following_info">
-       <%= link_to following_user_path(@user) do %>
-        <p class="number"><%= @user.following.count %></p>
-        <p>フォロー</p>
-      <% end %>
-      </div>
-      <div class="follower_info">
-        <%= link_to followers_user_path(@user) do %>
-          <p class="number"><%= @user.followers.count %></p>
-          <p>フォロー</p>
-        <% end %>
-      </div>
-    </div>
-
-  </div>
-
+  <%= render 'sns_profile_part' %>
   <div class="user_show_main_right">
     <div class="posts_main">
       <% @posts.each do |post| %>
+        <% @likes = Like.find_by(post_id: post.id) %>
         <div class="posts_part">
           <div class="posts_part_left">
+            <%= image_tag @user.profile_image_url, class: 'user_image' %>
           </div>
           <div class="posts_part_right">
-            <p><%= @user.name %></p>
-            <%= link_to post.content,post_path(post),class: 'content_show_a' %>
+            <p class="user_name"><%= @user.name %></p>
+            <%= link_to post.content, post_path(post), class: 'content_show_a' %>
+            <%= render 'shared/like_button', { post: post }%>
           </div>
         </div>
       <% end %>

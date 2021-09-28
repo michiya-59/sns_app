@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -86,6 +87,7 @@
   }
 }
 
+// 投稿の詳細画面のスタイル
 .home_main{
   .posts_main{
     box-shadow: 1px 1px 5px #efefef;
@@ -94,7 +96,7 @@
     margin: 50px auto;
     .posts_part{
       display: flex;
-      padding: 25px 25px;
+      padding: 25px 25px 25px 10px;
       border-bottom: 1px solid #f1f1f1;
       box-shadow: 1px 1px 1px #efefef;
       .content_show_a, a{
@@ -105,28 +107,47 @@
         }
       }
       .posts_part_left{
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: cadetblue;
         margin: 0 30px;
+        .user_image{
+          height: 75px;
+          width: 82px;
+          border-radius: 50%;
+        }
       }
       .posts_part_right{
         text-align: left;
-        p{
+        .user_name{
           font-weight: bold;
           font-size: 15px;
         }
-        .posts_detail_part_time{
-          font-size: 10px;
-          margin: 10px 0 0 0;
-          color: #9b9b9b;
-          font-weight: 100;
+        .likes_part{
+          display: flex;
+          width: 175px;
+          .posts_detail_part_time{
+            font-size: 10px;
+            margin: 10px 0 0 0;
+            color: #9b9b9b;
+            font-weight: 100;
+          }
+          .like_btn{
+            line-height: 33px;
+            width: 50px;
+            text-align: right;
+            .fa-heart{
+              margin-right: 5px;
+            }
+          }
+          .like_count{
+            margin: 0;
+            line-height: 32px;
+            font-weight: lighter;
+          }
         }
       }
     }
   }
 }
+
 
 .login_form,.entry_form{
   padding: 42px 0;
@@ -205,26 +226,32 @@
     .confirm_part{
       width: 33%;
     }
+    .confirm_image{
+      height: 100px;
+      margin-bottom: 20px;
+    }
   }
   .confirm_submit{
     font-size: 10px;
   }
 }
 
+// ユーザのプロフィール画面のスタイル
 .user_show_main{
   display: flex;
   margin-top: 66px;
   .user_show_main_left{
-    width: 30%;
+    width: 36%;
     border-right: 1px solid #d0d0d0;
     .user_show_main_left_top{
       display: flex;
       .posts_part_left{
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background: cadetblue;
         margin: 0 30px;
+        .user_image{
+          width: 120px;
+          height: 115px;
+          border-radius: 50%;
+        }
       }
       p{
         font-weight: bold;
@@ -238,7 +265,7 @@
       .setting_link{
         color: black;
         border: 1px solid #979494;
-        padding: 7px 29px;
+        padding: 7px 55px;
         border-radius: 20px;
         &:hover{
           background-color: #efefef;
@@ -265,6 +292,16 @@
   }
   .user_show_main_right{
     width: 70%;
+    .follower_or_following_msg{
+      font-size: 28px;
+      font-weight: bold;
+      width: 20%;
+      margin: 0 auto;
+      border-bottom: 4px solid #2dbbff;
+    }
+    .zero_msg{
+      margin: 50px 0;
+    }
     .posts_main{
       box-shadow: 1px 1px 5px #efefef;
       border: 1px solid #e2e2e2;
@@ -283,21 +320,48 @@
           }
         }
         .posts_part_left{
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          background: cadetblue;
           margin: 0 30px;
+          .user_image{
+            height: 75px;
+            width: 82px;
+            border-radius: 50%;
+          }
         }
         .posts_part_right{
           text-align: left;
-          p{
+          .user_name{
             font-weight: bold;
             font-size: 15px;
           }
+          .likes_part{
+            display: flex;
+            width: 175px;
+            .posts_detail_part_time{
+              font-size: 10px;
+              margin: 10px 0 0 0;
+              color: #9b9b9b;
+              font-weight: 100;
+            }
+            .like_btn{
+              line-height: 33px;
+              width: 50px;
+              text-align: right;
+              .fa-heart{
+                margin-right: 5px;
+              }
+            }
+            .like_count{
+              margin: 0;
+              line-height: 32px;
+              font-weight: lighter;
+            }
+          }
+          
         }
       }
     }
   }
 }
+
+
 

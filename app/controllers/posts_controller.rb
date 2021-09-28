@@ -1,11 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :show, :destroy]
   def index
-    if current_user.blank?
-      @posts = Post.all
-    else
-      @posts = current_user.posts.all
-    end
+    @posts = Post.all
   end
 
   def new
@@ -32,7 +28,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: @post.user_id)
   end
 
   def destroy
