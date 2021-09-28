@@ -5,16 +5,14 @@
     </div>
     <p><%= @user.name %></p>
   </div>
-  <% unless current_user.blank? %> <!--- ログインしているかどうか --->
-    <% if @user.id == current_user.id %> <!--- プロフィール画面が自分のアカウントか --->
-      <p class="edit_or_follow">
-        <%= link_to 'プロフィール編集', setting_user_path(@user), class: 'setting_link' %>
-      </p>
-    <% else %>
-      <p class="edit_or_follow">
-        <%= link_to 'フォロー', setting_user_path(@user), class: 'setting_link' %>
-      </p>
-    <% end %>
+  <% if @user.id == current_user.id %> <!--- プロフィール画面が自分のアカウントか --->
+    <p class="edit_or_follow">
+      <%= link_to 'プロフィール編集', setting_user_path(@user), class: 'setting_link' %>
+    </p>
+  <% else %>
+    <p class="edit_or_follow">
+      <%= link_to 'フォロー', setting_user_path(@user), class: 'setting_link' %>
+    </p>
   <% end %>
   <div class="follow_info_main">
     <div class="following_info">
