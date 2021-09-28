@@ -13,10 +13,8 @@
   </div>
 <div>
 <div class="posts_btn">
-  <% if current_user.present? %>
-    <% if @post.user_id == current_user.id %>
-      <%= link_to '編集', edit_post_path(@post), class: 'edit_button' %>
-      <%= link_to '削除', @post, method: :delete, class: 'delete_button', date: { confirm: "投稿を削除していいですか？" } %>
-    <% end %>
+  <% if @post.user_id == current_user&.id %>
+    <%= link_to '編集', edit_post_path(@post), class: 'edit_button' %>
+    <%= link_to '削除', @post, method: :delete, class: 'delete_button', date: { confirm: "投稿を削除していいですか？" } %>
   <% end %>
 </div>
