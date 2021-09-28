@@ -5,7 +5,7 @@
     </div>
     <p><%= @user.name %></p>
   </div>
-  <% if @user.id == current_user.id %> <!--- プロフィール画面が自分のアカウントか --->
+  <% if @user.id == current_user&.id %> <!--- プロフィール画面が自分のアカウントか --->
     <p class="edit_or_follow">
       <%= link_to 'プロフィール編集', setting_user_path(@user), class: 'setting_link' %>
     </p>
