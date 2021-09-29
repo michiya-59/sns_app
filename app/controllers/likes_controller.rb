@@ -2,7 +2,7 @@ class LikesController < ApplicationController
   before_action :redirect_when_no_logged_in
 
   def create
-    current_user.likes.create!(post_id: params[:post_id])
+    current_user.likes.create(post_id: params[:post_id])
 
     head :ok
   end

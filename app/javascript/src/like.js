@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Array.from(likeContainers).forEach(likeContainer => {
     const likeButton = likeContainer.querySelector('[data-like]')
     const cancelLikeButton = likeContainer.querySelector('[data-cancel-like]')
-    // それぞれのボタンが２個あるので、Countを表示しているDOMも2個ある
+    // それぞれのボタンが2個あるので、Countを表示しているDOMも2個ある
     const countSpans = likeContainer.querySelectorAll('[data-count]')
     // HACK: 文字列でBooleanが入っているのでevalしてBooleanに変換する
     const isLiked = eval(likeContainer.dataset.isLiked)
