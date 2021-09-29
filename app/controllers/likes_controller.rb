@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :logged_user_in
+  before_action :redirect_when_no_logged_in
   
   def create
     @post = Post.find(params[:post_id])
