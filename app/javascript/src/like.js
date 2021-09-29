@@ -21,11 +21,11 @@ document.addEventListener('turbolinks:load', () => {
     const isLiked = eval(likeContainer.dataset.isLiked)
 
     likeButton.addEventListener('ajax:success', () => {
-      Array.from(countSpans).forEach(countSpan => countSpan.innerHTML = eval(countSpan.innerHTML + 1))
+      Array.from(countSpans).forEach(countSpan => countSpan.innerHTML = eval(countSpan.innerHTML) + 1)
       switching(true, likeButton, cancelLikeButton)
     })
     cancelLikeButton.addEventListener('ajax:success', () => {
-      Array.from(countSpans).forEach(countSpan => countSpan.innerHTML = eval(countSpan.innerHTML - 1))
+      Array.from(countSpans).forEach(countSpan => countSpan.innerHTML = eval(countSpan.innerHTML) - 1)
       switching(false, likeButton, cancelLikeButton)
     })
 
