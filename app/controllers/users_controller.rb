@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged_user_in
+
   def index
   end
 
