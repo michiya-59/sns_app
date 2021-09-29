@@ -120,29 +120,6 @@
           font-weight: bold;
           font-size: 15px;
         }
-        .likes_part{
-          display: flex;
-          width: 175px;
-          .posts_detail_part_time{
-            font-size: 10px;
-            margin: 10px 0 0 0;
-            color: #9b9b9b;
-            font-weight: 100;
-          }
-          .like_btn{
-            line-height: 33px;
-            width: 50px;
-            text-align: right;
-            .fa-heart{
-              margin-right: 5px;
-            }
-          }
-          .like_count{
-            margin: 0;
-            line-height: 32px;
-            font-weight: lighter;
-          }
-        }
       }
     }
   }
@@ -333,32 +310,40 @@
             font-weight: bold;
             font-size: 15px;
           }
-          .likes_part{
-            display: flex;
-            width: 175px;
-            .posts_detail_part_time{
-              font-size: 10px;
-              margin: 10px 0 0 0;
-              color: #9b9b9b;
-              font-weight: 100;
-            }
-            .like_btn{
-              line-height: 33px;
-              width: 50px;
-              text-align: right;
-              .fa-heart{
-                margin-right: 5px;
-              }
-            }
-            .like_count{
-              margin: 0;
-              line-height: 32px;
-              font-weight: lighter;
-            }
-          }
-
         }
       }
     }
   }
+}
+
+.likes_part {
+  display: flex;
+  align-items: center;
+
+  .posts_detail_part_time {
+    font-size: 10px;
+    margin-right: 10px;
+    color: #9b9b9b;
+    font-weight: 100;
+  }
+
+  .like_count {
+    margin: 0;
+    line-height: 32px;
+    font-weight: lighter;
+  }
+}
+
+.like_btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+
+  .fa-heart{
+    margin-right: 5px;
+  }
+}
+
+.h-hide {
+  display: none;
 }
