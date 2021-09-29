@@ -9,7 +9,7 @@ const switching = (isLiked, likeButton, cancelLikeButton) => {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   const likeContainers = document.querySelectorAll('[data-like-container]')
 
   Array.from(likeContainers).forEach(likeContainer => {
