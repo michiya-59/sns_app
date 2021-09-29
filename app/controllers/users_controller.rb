@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :redirect_when_no_logged_in
+
   def index
   end
 
