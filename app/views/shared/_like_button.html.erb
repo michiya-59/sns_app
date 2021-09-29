@@ -1,12 +1,13 @@
-<div class="likes_part">
+<div class="likes_part" data-like-container>
   <p class="posts_detail_part_time"><%= post.created_at.to_s(:datetime_jp) %></p>
+  <% # TODO: どちらのボタンも表示しておいて、JSで表示の切り替えができるようにする %>
   <% if post.liked_by?(current_user) %>
-    <%= link_to post_like_path(post), class: 'like_btn', method: :delete do %>
+    <%= link_to post_like_path(post), class: 'like_btn', method: :delete, remote: true, data: { "cancel-like": true } do %>
       <i class="fas fa-heart heart" style="color: #ee0021;"></i>
     <% end %>
     <p class="like_count"><%= post.likes.count %></p>
   <% else %>
-    <%= link_to post_likes_path(post), class: 'like_btn', method: :post do %>
+    <%= link_to post_likes_path(post), class: 'like_btn', method: :post, remote: true, data: { "like": true } do %>
       <i class="fas fa-heart" style="color: #a3a3a3;"></i>
     <% end %>
     <p class="like_count"><%= post.likes.count %></p>

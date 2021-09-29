@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
   include(SessionsHelper)
 
-  def logged_user_in
-    if current_user.nil?
-      redirect_to login_path
-    end
+  def redirect_when_no_logged_in
+    return if current_user
+
+    redirect_to login_path
   end
 
 end
