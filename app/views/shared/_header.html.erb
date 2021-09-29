@@ -11,7 +11,6 @@
         <%= link_to '新規投稿', new_post_path, class:'header_a' %>
         <%= link_to 'ログアウト', logout_path, method: :delete, class:'header_a' %>
       <% else %>
-        <%= link_to 'HOME', root_path, class:'header_a' %>
         <%= link_to 'ログイン', login_path, class:'header_a' %>
       <% end %>
       </div>
