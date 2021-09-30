@@ -1,2 +1,29 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1 class="posts_h1">プロフィール編集</h1>
+
+<%= form_with(model: @user, local: true, class: 'entry_form', multipart: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="form">
+    <%= f.label :name ,'名前', class: 'entry_form_part' %>
+    <%= f.text_field :name, class: 'entry_form_email' %>
+  </div>
+  <div class="form">
+    <%= f.label :email , 'メールアドレス', class: 'entry_form_part' %>
+    <%= f.text_field :email, class: 'entry_form_email' %>
+  </div>
+  <div class="form">
+    <%= f.label :password , 'パスワード', class: 'entry_form_part' %>
+    <%= f.password_field :password, class: 'entry_form_password' %>
+  </div>
+  <div class="form">
+    <%= f.label :password_confirmation , 'パスワード(確認)', class: 'entry_form_part' %>
+    <%= f.password_field :password_confirmation, class: 'entry_form_password' %>
+  </div>
+
+  <div class="form">
+    <%= f.label :profile_image , '写真',class: 'entry_form_part' %>
+    <%= f.file_field :profile_image, class: 'entry_form_password' %>
+  </div>
+
+  <%= f.submit '変更',class: 'login_submit' %>
+<% end %>
