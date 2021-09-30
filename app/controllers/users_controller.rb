@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :redirect_when_no_logged_in
+  before_action :redirect_when_no_logged_in, only: [:index, :show, :edit, :update, :destroy]
 
   def index
   end
