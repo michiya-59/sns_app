@@ -1,0 +1,14 @@
+<div class="follow_follower_list_main">
+  <% users.each do |user| %>
+    <%= link_to user_path(user) do %>
+      <div class="user_parts">
+        <div class="user_part_left">
+            <%= image_tag user.profile_image_url, class: 'user_image' %>
+          </div>
+          <div class="user_part_right">
+            <p><%= user.name %></p>
+          </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
