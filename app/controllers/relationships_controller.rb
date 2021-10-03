@@ -10,9 +10,10 @@ class RelationshipsController < ApplicationController
 
   def destroy
     if current_user.following?(params[:user_id])
-      current_user.unfollow(params[:user_id]).destroy #フォローされていたら、フォローを外すようにしている
       redirect_to user_path(params[:user_id])
     else
+      current_user.unfollow(params[:user_id]).destroy #フォローされていたら、フォローを外すようにしている
       redirect_to user_path(params[:user_id])
+    end
   end
 end
