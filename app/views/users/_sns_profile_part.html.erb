@@ -12,9 +12,9 @@
   <% else %>
     <p class="edit_or_follow">
     <% if current_user.following?(@user) %>
-      <%= link_to 'フォロー中', user_relationship_path(@user), class: 'setting_link',method: :delete %>
+      <%= link_to 'フォロー中', user_relationship_path(@user), class: 'setting_link', method: :delete %>
     <% else %>
-      <%= link_to 'フォロー', user_relationships_path(@user), class: 'setting_link_unfollow',method: :post %>
+      <%= link_to 'フォロー', user_relationships_path(@user), class: 'setting_link_unfollow', method: :post %>
     <% end %>
     </p>
   <% end %>
