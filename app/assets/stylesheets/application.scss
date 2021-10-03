@@ -249,6 +249,17 @@
           text-decoration: none;
         }
       }
+      .setting_link_unfollow{
+        background: #181313;
+        color: white;
+        border: 1px solid #979494;
+        padding: 7px 55px;
+        border-radius: 20px;
+        &:hover{
+          opacity: 0.9;
+          text-decoration: none;
+        }
+      }
     }
 
     .follow_info_main{
