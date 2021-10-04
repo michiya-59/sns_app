@@ -14,3 +14,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "../src/like"
+import "../src/follow"
