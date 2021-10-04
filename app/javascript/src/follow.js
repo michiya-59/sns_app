@@ -1,10 +1,10 @@
-const switching = (isfollowed, follow_button, unfollow_button) => {
-  if (isfollowed) {
-    follow_button.classList.add('h-hidden')
-    unfollow_button.classList.remove('h-hidden')
+const switching = (isFollow, followButton, unfollowButton) => {
+  if (isFollow) {
+    followButton.classList.add('h-hidden')
+    unfollowButton.classList.remove('h-hidden')
   } else {
-    follow_button.classList.remove('h-hidden')
-    unfollow_button.classList.add('h-hidden')
+    followButton.classList.remove('h-hidden')
+    unfollowButton.classList.add('h-hidden')
   }
 }
 
@@ -12,20 +12,20 @@ document.addEventListener('turbolinks:load', () => {
   const followContainer = document.querySelectorAll('[data-follow-container]')
 
   Array.from(followContainer).forEach(followContainer => {
-    const follow_button = followContainer.querySelector('[data-follow]')
-    const unfollow_button = followContainer.querySelector('[data-unfollow]')
-    const unfollower_count = followContainer.querySelector('[data-unfollow-count]')
-    const isfollowed = eval(followContainer.dataset.isFollow)
+    const followButton = followContainer.querySelector('[data-follow]')
+    const unfollowButton = followContainer.querySelector('[data-unfollow]')
+    const unfollowerCount = followContainer.querySelector('[data-unfollow-count]')
+    const isFollow = eval(followContainer.dataset.isFollow)
 
-    follow_button.addEventListener('ajax:success', () => {
-      unfollower_count.innerHTML = eval(unfollower_count.innerHTML) + 1
-      switching(false, follow_button, unfollow_button)
+    followButton.addEventListener('ajax:success', () => {
+      unfollowerCount.innerHTML = eval(unfollowerCount.innerHTML) + 1
+      switching(false, followButton, unfollowButton)
     })
 
-    unfollow_button.addEventListener('ajax:success', () => {
-      unfollower_count.innerHTML = eval(unfollower_count.innerHTML) - 1
-      switching(true, follow_button, unfollow_button)
+    unfollowButton.addEventListener('ajax:success', () => {
+      unfollowerCount.innerHTML = eval(unfollowerCount.innerHTML) - 1
+      switching(true, followButton, unfollowButton)
     })
-    switching(isfollowed, follow_button, unfollow_button)
+    switching(isFollow, followButton, unfollowButton)
   })
 })
