@@ -12,7 +12,7 @@ document.addEventListener('turbolinks:load', () => {
   const followContainer = document.querySelectorAll('[data-follow-container]')
 
   Array.from(followContainer).forEach(followContainer => {
-    const follow_button = followContainer.querySelector('[data-follow]')
+    const followButton = followContainer.querySelector('[data-follow]')
     const unfollow_button = followContainer.querySelector('[data-unfollow]')
     const follower_count = followContainer.querySelector('[data-unfollow-count]')
     const isfollowed = eval(followContainer.dataset.isFollow)
