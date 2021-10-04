@@ -14,16 +14,16 @@ document.addEventListener('turbolinks:load', () => {
   Array.from(followContainer).forEach(followContainer => {
     const follow_button = followContainer.querySelector('[data-follow]')
     const unfollow_button = followContainer.querySelector('[data-unfollow]')
-    const follower_count = followContainer.querySelector('[data-unfollow-count]')
+    const unfollower_count = followContainer.querySelector('[data-unfollow-count]')
     const isfollowed = eval(followContainer.dataset.isFollow)
 
     follow_button.addEventListener('ajax:success', () => {
-      follower_count.innerHTML = eval(follower_count.innerHTML) + 1
+      unfollower_count.innerHTML = eval(unfollower_count.innerHTML) + 1
       switching(false, follow_button, unfollow_button)
     })
 
     unfollow_button.addEventListener('ajax:success', () => {
-      follower_count.innerHTML = eval(follower_count.innerHTML) - 1
+      unfollower_count.innerHTML = eval(unfollower_count.innerHTML) - 1
       switching(true, follow_button, unfollow_button)
     })
     switching(isfollowed, follow_button, unfollow_button)
