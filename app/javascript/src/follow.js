@@ -19,12 +19,12 @@ document.addEventListener('turbolinks:load', () => {
 
     followButton.addEventListener('ajax:success', () => {
       unfollowerCount.innerHTML = eval(unfollowerCount.innerHTML) + 1
-      switching(false, followButton, unfollowButton)
+      switching(true, followButton, unfollowButton)
     })
 
     unfollowButton.addEventListener('ajax:success', () => {
       unfollowerCount.innerHTML = eval(unfollowerCount.innerHTML) - 1
-      switching(true, followButton, unfollowButton)
+      switching(false, followButton, unfollowButton)
     })
     switching(isFollowed, followButton, unfollowButton)
   })
