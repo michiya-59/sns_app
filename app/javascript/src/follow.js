@@ -1,5 +1,5 @@
-const switching = (isFollow, followButton, unfollowButton) => {
-  if (isFollow) {
+const switching = (isFollowed, followButton, unfollowButton) => {
+  if (isFollowed) {
     followButton.classList.add('h-hidden')
     unfollowButton.classList.remove('h-hidden')
   } else {
@@ -15,7 +15,7 @@ document.addEventListener('turbolinks:load', () => {
     const followButton = followContainer.querySelector('[data-follow]')
     const unfollowButton = followContainer.querySelector('[data-unfollow]')
     const unfollowerCount = followContainer.querySelector('[data-unfollow-count]')
-    const isFollow = eval(followContainer.dataset.isFollow)
+    const isFollowed = eval(followContainer.dataset.isFollowed)
 
     followButton.addEventListener('ajax:success', () => {
       unfollowerCount.innerHTML = eval(unfollowerCount.innerHTML) + 1
@@ -26,6 +26,6 @@ document.addEventListener('turbolinks:load', () => {
       unfollowerCount.innerHTML = eval(unfollowerCount.innerHTML) - 1
       switching(true, followButton, unfollowButton)
     })
-    switching(isFollow, followButton, unfollowButton)
+    switching(isFollowed, followButton, unfollowButton)
   })
 })
