@@ -1,10 +1,10 @@
 const switching = (isFollowed, followButton, unfollowButton) => {
   if (isFollowed) {
-    followButton.classList.add('h-hidden')
-    unfollowButton.classList.remove('h-hidden')
+    followButton.classList.add('h-hide')
+    unfollowButton.classList.remove('h-hide')
   } else {
-    followButton.classList.remove('h-hidden')
-    unfollowButton.classList.add('h-hidden')
+    followButton.classList.remove('h-hide')
+    unfollowButton.classList.add('h-hide')
   }
 }
 
