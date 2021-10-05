@@ -50,6 +50,6 @@ class User < ApplicationRecord
   end
 
   def following?(other_id)
-    active_relationships.where(followed_id: other_id).exists?
+    active_relationships.any?{ |relationship| relationship.followed_id == other_id }
   end
 end
