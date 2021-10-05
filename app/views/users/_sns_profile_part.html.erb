@@ -5,15 +5,18 @@
     </div>
     <p><%= @user.name %></p>
   </div>
-  <div class="follow_main_info" data-follow-container data-is-followed=<%= current_user.following?(@user) %>>
+  <div class="follow_main_info" data-follow-container data-is-followed=<%= current_user.following?(@user.id) %>>
     <% if @user.id == current_user&.id %> <!--- プロフィール画面が自分のアカウントか --->
       <p class="edit_or_follow">
         <%= link_to 'プロフィール編集', edit_user_path(@user), class: 'setting_link' %>
       </p>
     <% else %>
       <p class="edit_or_follow">
+      <% if current_user.following?(@user.id) %>
         <%= link_to 'フォロー中', user_relationships_path(@user), class: 'setting_link', remote: true, method: :delete, data: { "unfollow": true } %>
+      <% else %>
         <%= link_to 'フォロー', user_relationships_path(@user), class: 'setting_link_unfollow', remote: true, method: :post, data: { "follow": true } %>
+      <% end %>
       </p>
     <% end %>
     <div class="follow_info_main">
