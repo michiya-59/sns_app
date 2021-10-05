@@ -5,31 +5,30 @@
     </div>
     <p><%= @user.name %></p>
   </div>
-  <% if @user.id == current_user&.id %> <!--- プロフィール画面が自分のアカウントか --->
-    <p class="edit_or_follow">
-      <%= link_to 'プロフィール編集', edit_user_path(@user), class: 'setting_link' %>
-    </p>
-  <% else %>
-    <p class="edit_or_follow">
-    <% if current_user.following?(@user.id) %>
-      <%= link_to 'フォロー中', user_relationship_path(@user), class: 'setting_link', method: :delete %>
+  <div class="follow_main_info" data-follow-container data-is-followed=<%= current_user.following?(@user) %>>
+    <% if @user.id == current_user&.id %> <!--- プロフィール画面が自分のアカウントか --->
+      <p class="edit_or_follow">
+        <%= link_to 'プロフィール編集', edit_user_path(@user), class: 'setting_link' %>
+      </p>
     <% else %>
-      <%= link_to 'フォロー', user_relationships_path(@user), class: 'setting_link_unfollow', method: :post %>
+      <p class="edit_or_follow">
+        <%= link_to 'フォロー中', user_relationships_path(@user), class: 'setting_link', remote: true, method: :delete, data: { "unfollow": true } %>
+        <%= link_to 'フォロー', user_relationships_path(@user), class: 'setting_link_unfollow', remote: true, method: :post, data: { "follow": true } %>
+      </p>
     <% end %>
-    </p>
-  <% end %>
-  <div class="follow_info_main">
-    <div class="following_info">
-      <%= link_to following_user_path(@user) do %>
-        <p class="number"><%= @user.following.count %></p>
-        <p>フォロー</p>
-      <% end %>
-    </div>
-    <div class="follower_info">
-      <%= link_to followers_user_path(@user) do %>
-        <p class="number"><%= @user.followers.count %></p>
-        <p>フォロワー</p>
-      <% end %>
+    <div class="follow_info_main">
+      <div class="following_info">
+        <%= link_to following_user_path(@user) do %>
+          <span class="number" data-follow-count ><%= @user.following.count %></span>
+          <p>フォロー</p>
+        <% end %>
+      </div>
+      <div class="follower_info">
+        <%= link_to followers_user_path(@user) do %>
+          <span class="number" data-unfollow-count><%= @user.followers.count %></span>
+          <p>フォロワー</p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
