@@ -1,5 +1,5 @@
 <div class="follow_follower_list_main">
-  <%= link_to user_path(follow_follower_list.id) do %>
+  <%= link_to user_path(follow_follower_list.id), class: "follow_follower_list_main" do %>
     <div class="user_parts">
       <div class="user_part_left">
         <%= image_tag follow_follower_list.profile_image_url, class: 'user_image' %>
