@@ -49,7 +49,7 @@ class User < ApplicationRecord
     active_relationships.find_by(followed_id: user_id)
   end
 
-  def following?(user)
-    following.include?(user)
+  def following?(other_id)
+    active_relationships.where(followed_id: other_id).exists?
   end
 end
