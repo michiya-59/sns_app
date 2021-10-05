@@ -358,3 +358,40 @@
 .h-hide {
   display: none;
 }
+
+// フォロー、フォロワー一覧のスタイル
+.follow_follower_list_main{
+  width: 60%;
+  box-shadow: 1px 1px 5px #efefef;
+  border: 1px solid #e2e2e2;
+  margin: 0px auto;
+  a:hover{
+    text-decoration: none;
+  }
+  .user_parts{
+    display: flex;
+    padding: 20px 0;
+    &:hover{
+      background:#f8f8f8;
+    }
+    .user_part_left{
+      width: 35%;
+      img{
+        height: 75px;
+        width: 82px;
+        border-radius: 50%;
+      }
+    }
+    .user_part_right{
+      p{
+        color: black;
+        font-size: 18px;
+        line-height: 60px;
+        margin: 0;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

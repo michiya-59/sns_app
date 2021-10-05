@@ -3,7 +3,7 @@
   <div class="user_show_main_right">
     <p class="follower_or_following_msg">フォロー中<p>
     <% if @users.present? %>
-      <%= render @users %>
+      <%= render partial: "follow_follower_list", collection: @users %>
     <% else %>
       <p class="zero_msg">誰もフォローしていません</p>
     <% end %>
