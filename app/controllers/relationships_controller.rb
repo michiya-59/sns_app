@@ -10,7 +10,8 @@ class RelationshipsController < ApplicationController
   end
 
   def destroy
-    if current_user.following?(params[:user_id])
+    # HTTP Requestは文字列で渡ってくるので、存在チェックも兼ねて一度Userを取得してIDを渡す
+    if current_user.following?(User.find(params[:user_id]).id)
       current_user.unfollow(params[:user_id])
       head :ok
     else
