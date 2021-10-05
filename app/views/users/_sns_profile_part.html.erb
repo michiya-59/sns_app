@@ -12,7 +12,7 @@
       </p>
     <% else %>
       <p class="edit_or_follow">
-        <%= link_to 'フォロー中', user_relationship_path(@user), class: 'setting_link', remote: true, method: :delete, data: { "unfollow": true } %>
+        <%= link_to 'フォロー中', relationship_path(@user), class: 'setting_link', remote: true, method: :delete, data: { "unfollow": true } %>
         <%= link_to 'フォロー', user_relationships_path(@user), class: 'setting_link_unfollow', remote: true, method: :post, data: { "follow": true } %>
       </p>
     <% end %>
