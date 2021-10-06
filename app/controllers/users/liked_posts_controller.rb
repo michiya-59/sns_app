@@ -3,6 +3,7 @@
 module Users
   class LikedPostsController < ApplicationController
     def index
+      @user = User.find(params[:user_id])
       @posts = Post.where(id: User.find(params[:user_id]).likes.pluck(:post_id))
     end
   end
