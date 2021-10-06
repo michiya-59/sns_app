@@ -13,7 +13,7 @@
               <%= image_tag like_post.user.profile_image_url, class: 'user_image' %>
             </div>
             <div class="posts_part_right">
-              <p class="user_name"><%= like_post.user.name %></p>
+              <%= link_to like_post.user.name, user_path(like_post.user_id), class: "user_name" %>
               <%= link_to like_post.content, post_path(like_post), class: 'content_show_a' %>
               <%= render 'shared/like_button', { post: like_post } %>
             </div>
