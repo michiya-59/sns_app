@@ -1,6 +1,7 @@
 <div class="user_show_main">
   <%= render 'sns_profile_part' , { user: @user }%>
   <div class="user_show_main_right">
+    <%= render 'post_liked_button' , { user: @user }%>
     <% if @posts.present? %>
       <div class="posts_main">
         <% @posts.each do |post| %>

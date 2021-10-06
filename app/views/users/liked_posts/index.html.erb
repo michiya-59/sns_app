@@ -1,3 +1,24 @@
-<% @posts.each do |post| %>
-  <div><%= post.content %></div>
-<% end %>
+<div class="user_show_main">
+  <%= render 'users/sns_profile_part', { user: @user } %>
+  <div class="user_show_main_right">
+    <%= render 'post_liked_button' , { user: @user }%>
+    <% if @posts.present? %>
+      <div class="posts_main">
+        <% @posts.each do |post| %>
+          <div class="posts_part">
+            <div class="posts_part_left">
+              <%= image_tag post.user.profile_image_url, class: 'user_image' %>
+            </div>
+            <div class="posts_part_right">
+              <p class="user_name"><%= post.user.name %></p>
+              <%= link_to post.content, post_path(post), class: 'content_show_a' %>
+              <%= render 'shared/like_button', { post: post } %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>まだいいねしている投稿がありません</p>
+    <% end %>
+  </div>
+</div>
