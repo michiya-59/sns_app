@@ -7,18 +7,7 @@
     </div>
     <% if @posts.present? %>
       <div class="posts_main">
-        <% @posts.each do |post| %>
-          <div class="posts_part">
-            <div class="posts_part_left">
-              <%= image_tag post.user.profile_image_url, class: 'user_image' %>
-            </div>
-            <div class="posts_part_right">
-              <p class="user_name"><%= post.user.name %></p>
-              <%= link_to post.content, post_path(post), class: 'content_show_a' %>
-              <%= render 'shared/like_button', { post: post } %>
-            </div>
-          </div>
-        <% end %>
+        <%= render partial: "users/post_content_list", collection: @posts %>
       </div>
     <% else %>
       <p>まだいいねしている投稿がありません</p>
