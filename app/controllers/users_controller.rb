@@ -55,12 +55,6 @@ class UsersController < ApplicationController
     render 'followers'
   end
 
-  def likes_list
-    likes = Like.where(user_id: @user.id).pluck(:post_id)
-    @like_posts = Post.find(likes)
-    render 'user_list'
-  end
-
   private
 
   def user_params
