@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
   before_action :redirect_when_no_logged_in
-  before_action :set_post, only: [:edit, :update, :show, :destroy]
+  before_action :set_post, only: %i[edit update show destroy]
 
   def index
     @posts = Post.all
@@ -20,8 +22,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @post.update(posts_params)
@@ -29,8 +30,7 @@ class PostsController < ApplicationController
     flash[:success] = '編集完了しました'
   end
 
-  def show
-  end
+  def show; end
 
   def destroy
     @post.destroy

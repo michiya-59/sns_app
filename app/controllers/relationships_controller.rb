@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RelationshipsController < ApplicationController
   def create
     if current_user.following?(params[:user_id])
@@ -6,7 +8,6 @@ class RelationshipsController < ApplicationController
       current_user.follow(params[:user_id])
       head :ok
     end
-
   end
 
   def destroy

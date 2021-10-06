@@ -1,9 +1,10 @@
-class UsersController < ApplicationController
-  before_action :redirect_when_no_logged_in, only: [:index, :show, :edit, :update, :destroy]
-  before_action :set_user, only: [:show, :edit, :update, :following, :followers]
+# frozen_string_literal: true
 
-  def index
-  end
+class UsersController < ApplicationController
+  before_action :redirect_when_no_logged_in, only: %i[index show edit update destroy]
+  before_action :set_user, only: %i[show edit update following followers]
+
+  def index; end
 
   def new
     @user = User.new
@@ -26,8 +27,7 @@ class UsersController < ApplicationController
     @posts = @user.posts.where(user_id: @user.id)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if current_user == @user
@@ -38,14 +38,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-  end
+  def destroy; end
 
   def user_confirm_new
     @user = User.new(user_params)
-    unless @user.valid?
-      render 'new'
-    end
+    render 'new' unless @user.valid?
   end
 
   def following
@@ -57,7 +54,7 @@ class UsersController < ApplicationController
     @users = @user.followers
     render 'followers'
   end
-  
+
   private
 
   def user_params
