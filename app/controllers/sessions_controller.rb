@@ -1,18 +1,19 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by(email: params[:session][:email])
 
-    if user && user.authenticate(params[:session][:password])
+    if user&.authenticate(params[:session][:password])
       login(user)
       params[:session][:remember] == '1' ? remember(user) : forget(user)
       redirect_to root_url
       flash.now[:success] = 'ログインしました'
     else
       render 'new'
-    end 
+    end
   end
 
   def destroy
