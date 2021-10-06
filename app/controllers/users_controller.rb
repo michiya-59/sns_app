@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :redirect_when_no_logged_in, only: %i[index show edit update destroy]
-  before_action :set_user, only: %i[show edit update following followers]
+  before_action :set_user, only: %i[show edit update following followers likes_list]
 
   def index; end
 
@@ -53,6 +53,12 @@ class UsersController < ApplicationController
   def followers
     @users = @user.followers
     render 'followers'
+  end
+
+  def likes_list
+    likes = Like.where(user_id: @user.id).pluck(:post_id)
+    @like_posts = Post.find(likes)
+    render 'user_list'
   end
 
   private
