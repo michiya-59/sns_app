@@ -1,20 +1,23 @@
 <div class="user_show_main">
   <%= render 'sns_profile_part' %>
   <div class="user_show_main_right">
-    <div class="posts_main">
-      <% @posts.each do |post| %>
-        <% @likes = Like.find_by(post_id: post.id) %>
-        <div class="posts_part">
-          <div class="posts_part_left">
-            <%= image_tag @user.profile_image_url, class: 'user_image' %>
+    <% if @posts.present? %>
+      <div class="posts_main">
+        <% @posts.each do |post| %>
+          <div class="posts_part">
+            <div class="posts_part_left">
+              <%= image_tag @user.profile_image_url, class: 'user_image' %>
+            </div>
+            <div class="posts_part_right">
+              <p class="user_name"><%= @user.name %></p>
+              <%= link_to post.content, post_path(post), class: 'content_show_a' %>
+              <%= render 'shared/like_button', { post: post }%>
+            </div>
           </div>
-          <div class="posts_part_right">
-            <p class="user_name"><%= @user.name %></p>
-            <%= link_to post.content, post_path(post), class: 'content_show_a' %>
-            <%= render 'shared/like_button', { post: post }%>
-          </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>投稿がまだありません</p>
+    <% end %>
   </div>
 </div>
