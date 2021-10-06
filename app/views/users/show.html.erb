@@ -1,5 +1,5 @@
 <div class="user_show_main">
-  <%= render 'sns_profile_part' %>
+  <%= render 'sns_profile_part' , { user: @user }%>
   <div class="user_show_main_right">
     <% if @posts.present? %>
       <div class="posts_main">
