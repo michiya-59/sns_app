@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :redirect_when_no_logged_in, only: %i[index show edit update destroy]
-  before_action :set_user, only: %i[show edit update following followers]
+  before_action :set_user, only: %i[show edit update following followers likes_list]
 
   def index; end
 
