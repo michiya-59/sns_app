@@ -280,6 +280,28 @@
   }
   .user_show_main_right{
     width: 70%;
+    .switch_content_main{
+      font-size: 15px;
+      font-weight: 700;
+      width: 68%;
+      margin: 15px auto;
+      .switch_post, .switch_like{
+        width: 130px;
+        opacity: 0.7;
+        display: inline-block;
+        padding-bottom: 9px;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+      .switch_post{
+        margin-right: 15px;
+      }
+      .active{
+        border-bottom: 3px solid #337ab7;
+        opacity: 1;
+      }
+    }
     .follower_or_following_msg{
       font-size: 28px;
       font-weight: bold;
