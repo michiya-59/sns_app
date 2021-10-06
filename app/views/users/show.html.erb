@@ -4,7 +4,6 @@
     <% if @posts.present? %>
       <div class="posts_main">
         <% @posts.each do |post| %>
-          <% @likes = Like.find_by(post_id: post.id) %>
           <div class="posts_part">
             <div class="posts_part_left">
               <%= image_tag @user.profile_image_url, class: 'user_image' %>
