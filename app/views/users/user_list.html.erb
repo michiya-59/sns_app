@@ -1,0 +1,27 @@
+<div class="user_show_main">
+  <%= render 'sns_profile_part' %>
+  <div class="user_show_main_right">
+    <div class="switch_content_main">
+      <%= link_to '投稿', user_path(@user), class: "switch_post" %>
+      <%= link_to 'いいね', likes_list_user_path(@user), class: "switch_like active" %>
+    </div>
+    <% if @like_posts.present? %>
+      <div class="posts_main">
+        <% @like_posts.each do |like_post| %>
+          <div class="posts_part">
+            <div class="posts_part_left">
+              <%= image_tag like_post.user.profile_image_url, class: 'user_image' %>
+            </div>
+            <div class="posts_part_right">
+              <p class="user_name"><%= like_post.user.name %></p>
+              <%= link_to like_post.content, post_path(like_post), class: 'content_show_a' %>
+              <%= render 'shared/like_button', { post: like_post } %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>まだいいねしている投稿がありません</p>
+    <% end %>
+  </div>
+</div>
