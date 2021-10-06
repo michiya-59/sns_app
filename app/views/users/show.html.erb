@@ -7,7 +7,7 @@
     </div>
     <% if @posts.present? %>
       <div class="posts_main">
-        <%= render partial: "post_content_list", collection: @posts %>
+        <%= render partial: "post", collection: @posts %>
       </div>
     <% else %>
       <p>投稿がまだありません</p>

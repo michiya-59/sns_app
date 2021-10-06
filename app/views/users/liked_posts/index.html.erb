@@ -7,7 +7,7 @@
     </div>
     <% if @posts.present? %>
       <div class="posts_main">
-        <%= render partial: "users/post_content_list", collection: @posts %>
+        <%= render partial: "users/post", collection: @posts %>
       </div>
     <% else %>
       <p>まだいいねしている投稿がありません</p>
