@@ -3,7 +3,7 @@
   <div class="user_show_main_right">
     <div class="switch_content_main">
       <%= link_to '投稿', user_path(@user), class: "switch_post active" %>
-      <%= link_to 'いいね', likes_list_user_path(@user), class: "switch_like" %>
+      <%= link_to 'いいね', me_liked_post_path(@user), class: "switch_like" %>
     </div>
     <% if @posts.present? %>
       <div class="posts_main">
