@@ -7,6 +7,10 @@
       <div class="header_right">
       <% if login_in? %>
         <%= link_to 'HOME', root_path, class:'header_a' %>
+        <%= form_with(url: search_path, method: :get, local: true) do |f| %>
+          <%= f.text_field :word %>
+          <% f.submit "検索" %>
+        <% end %>
         <%= link_to 'プロフィール', user_path(current_user), class:'header_a' %>
         <%= link_to '新規投稿', new_post_path, class:'header_a' %>
         <%= link_to 'ログアウト', logout_path, method: :delete, class:'header_a' %>
