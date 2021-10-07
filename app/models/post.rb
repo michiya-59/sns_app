@@ -11,4 +11,8 @@ class Post < ApplicationRecord
   def liked_by?(target_user)
     likes.where(user_id: target_user.id).exists?
   end
+
+  def self.looks(search_word)
+    Post.where("content LIKE ?", "%#{search_word}%")
+  end
 end
