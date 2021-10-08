@@ -19,6 +19,7 @@
   text-align: center;
 }
 
+// ヘッダーのスタイル
 .header_main{
   display: flex;
   flex-direction: row;
@@ -39,13 +40,35 @@
     }
   }
   .header_right{
-    text-align: right;
     width: 100%;
     line-height: 65px;
+    display: flex;
+    justify-content: flex-end;
     a{
       margin-right: 18px;
       font-weight: 600;
       font-family: cursive;
+    }
+    .search_form{
+      height: 22px;
+      width: 130px;
+      background: #ffffff;
+      border: 2px solid #4886bd;
+      border-radius: 5px;
+    }
+    .search_submit{
+      background: #efefef;
+      border: 2px solid #4886bd;
+      border-radius: 5px;
+      height: 22px;
+      font-size: 10px;
+      line-height: 19px;
+      color: #4886bd;
+      font-weight: 700;
+      margin-right: 18px;
+      position: relative;
+      right: 2px;
+      top: -1px;
     }
   }
 }
@@ -391,6 +414,71 @@
         margin: 0;
         &:hover{
           text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// 検索結果のスタイル
+.serach_user_main{
+  margin-top: 66px;
+  .user_show_part{
+    width: 70%;
+    margin: 0 auto;
+    .serch_user_result{
+      display: block;
+      width: 60%;
+      box-shadow: 1px 1px 5px #efefef;
+      border: 1px solid #e2e2e2;
+      margin: 0px auto;
+    }
+    .user_part{
+      display: flex;
+      padding: 20px 0;
+      .user_part_left{
+        width: 35%;
+        .user_image{
+          height: 75px;
+          width: 82px;
+          border-radius: 50%;
+        }
+      }
+      .user_part_right{
+        p{
+          color: black;
+          font-size: 18px;
+          line-height: 60px;
+          margin: 0;
+        }
+      }
+    }
+    .post_part{
+      display: flex;
+      padding: 20px 0 10px 0;
+      width: 60%;
+      box-shadow: 1px 1px 5px #efefef;
+      border: 1px solid #e2e2e2;
+      margin: 0px auto;
+      .user_part_left{
+        width: 35%;
+        .user_image{
+          height: 75px;
+          width: 82px;
+          border-radius: 50%;
+        }
+      }
+      .user_part_right{
+        display: flex;
+        flex-direction: column;
+        a{
+          color: black;
+          margin-bottom: 10px;
+          text-decoration: none;
+          text-align: left;
+        }
+        .likes_part{
+          height: 32px;
         }
       }
     }
