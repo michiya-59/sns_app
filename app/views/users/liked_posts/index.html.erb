@@ -1,3 +1,16 @@
-<% @posts.each do |post| %>
-  <div><%= post.content %></div>
-<% end %>
+<div class="user_show_main">
+  <%= render 'users/sns_profile_part', { user: @user } %>
+  <div class="user_show_main_right">
+    <div class="switch_content_main">
+      <%= link_to '投稿', user_path(@user), class: "switch_post" %>
+      <%= link_to 'いいね', user_liked_posts_path(@user), class: "switch_like active" %>
+    </div>
+    <% if @posts.present? %>
+      <div class="posts_main">
+        <%= render partial: "users/post", collection: @posts %>
+      </div>
+    <% else %>
+      <p>まだいいねしている投稿がありません</p>
+    <% end %>
+  </div>
+</div>
