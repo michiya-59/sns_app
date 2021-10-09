@@ -13,6 +13,6 @@ class Post < ApplicationRecord
   end
 
   def self.looks(search_word)
-    Post.where("content LIKE ?", "%#{sanitize_sql_like(search_word)}%")
+    Post.includes(:user).where("content LIKE ?", "%#{sanitize_sql_like(search_word)}%")
   end
 end
