@@ -58,6 +58,6 @@ class User < ApplicationRecord
   end
 
   def self.looks(search_word)
-    User.where("name LIKE ?", "%#{search_word}%")
+    User.where("name LIKE ?", "%#{sanitize_sql_like(search_word)}%")
   end
 end
