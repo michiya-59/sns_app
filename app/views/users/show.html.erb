@@ -1,20 +1,13 @@
 <div class="user_show_main">
-  <%= render 'sns_profile_part' %>
+  <%= render 'sns_profile_part', { user: @user } %>
   <div class="user_show_main_right">
+    <div class="switch_content_main">
+      <%= link_to '投稿', user_path(@user), class: "switch_post active" %>
+      <%= link_to 'いいね', user_liked_posts_path(@user), class: "switch_like" %>
+    </div>
     <% if @posts.present? %>
       <div class="posts_main">
-        <% @posts.each do |post| %>
-          <div class="posts_part">
-            <div class="posts_part_left">
-              <%= image_tag @user.profile_image_url, class: 'user_image' %>
-            </div>
-            <div class="posts_part_right">
-              <p class="user_name"><%= @user.name %></p>
-              <%= link_to post.content, post_path(post), class: 'content_show_a' %>
-              <%= render 'shared/like_button', { post: post }%>
-            </div>
-          </div>
-        <% end %>
+        <%= render partial: "post", collection: @posts %>
       </div>
     <% else %>
       <p>投稿がまだありません</p>
