@@ -56,4 +56,8 @@ class User < ApplicationRecord
   def following?(other_id)
     active_relationships.any? { |relationship| relationship.followed_id == other_id }
   end
+
+  def self.looks(search_word)
+    User.where('name LIKE ?', "%#{sanitize_sql_like(search_word)}%")
+  end
 end
