@@ -39,7 +39,7 @@ m = Module.new do
 
   def gemfile
     gemfile = ENV['BUNDLE_GEMFILE']
-    return gemfile unless gemfile.empty? # rubocop:disable Lint/RedundantCopDisableDirective
+    return gemfile unless gemfile.empty? # rubocop:disable 
 
     File.expand_path('../Gemfile', __dir__)
   end
