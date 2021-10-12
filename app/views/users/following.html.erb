@@ -1,5 +1,5 @@
 <div class="user_show_main">
-  <%= render 'sns_profile_part' %>
+  <%= render 'sns_profile_part', { user: @user }  %>
   <div class="user_show_main_right">
     <p class="follower_or_following_msg">フォロー中</p>
     <% if @users.present? %>
