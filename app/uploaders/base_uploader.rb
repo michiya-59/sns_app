@@ -7,7 +7,12 @@ class BaseUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   # TODO: ここを本番と開発環境で切り替える
-  storage :file
+  if Rails.env.production?
+    include Cloudinary::CarrierWave
+  else
+    # 本番以外ではローカルに保存する
+    storage :file
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
