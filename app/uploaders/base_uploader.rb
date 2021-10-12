@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 class BaseUploader < CarrierWave::Uploader::Base
+  include Cloudinary::CarrierWave
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   # TODO: ここを本番と開発環境で切り替える
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
